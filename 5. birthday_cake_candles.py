@@ -1,6 +1,5 @@
 def birthday_cake_candles(candles):
-    sorted_candles = sorted(candles)
-    return candles.count(sorted_candles[-1])
+    return candles.count(max(candles))
 
 
 if __name__ == "__main__":
