@@ -3,8 +3,9 @@ def is_vowel(letter):
 
 
 def score_words(words):
+    transformed_words = list(map(str, words))
     score = 0
-    for word in words:
+    for word in transformed_words:
         vowels = 0
         for letter in word:
             if is_vowel(letter):
@@ -18,7 +19,7 @@ def score_words(words):
 
 
 if __name__ == "__main__":
-    no_words = int(input())
-    words = list(map(str, input().split(" ")))[:no_words]
+    n = int(input())
+    words = input().split()
     print(score_words(words))
 
