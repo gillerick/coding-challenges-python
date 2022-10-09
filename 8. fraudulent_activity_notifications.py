@@ -1,14 +1,17 @@
 def activity_notifications(expenditure: list[int], d: int):
-    for n in range(len(expenditure)):
-        notifications = 0
-        days_expenditure_index = d + 1
+    notifications: int = 0
+    days_expenditure_index = d + 1
+    for n in range(len(expenditure) - days_expenditure_index):
         trailing_expenses = expenditure[n:days_expenditure_index]
         median = median_calculator(trailing_expenses)
         days_expenditure = expenditure[days_expenditure_index]
         if days_expenditure >= median:
             notifications += 1
+            days_expenditure_index += 1
+        else:
+            days_expenditure_index += 1
 
-        return notifications
+    return notifications
 
 
 def median_calculator(arr: list[int]):
@@ -22,6 +25,6 @@ def median_calculator(arr: list[int]):
 
 if __name__ == "__main__":
     n, d = map(int, input().split())
-    expenditure = list(map(int, input().rstrip().split()))[:n]
+    expenditure = list(map(int, input().rstrip().split()))
 
     print(activity_notifications(expenditure, d))
