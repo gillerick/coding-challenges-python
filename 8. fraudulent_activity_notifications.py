@@ -21,7 +21,7 @@ def median_calculator(arr: list[int]):
 
 
 if __name__ == "__main__":
-    n, d = input().split()
+    n, d = map(int, input().split())
     expenditure = list(map(int, input().rstrip().split()))[:n]
 
     print(activity_notifications(expenditure, d))
