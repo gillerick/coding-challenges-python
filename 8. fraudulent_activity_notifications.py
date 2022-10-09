@@ -1,5 +1,15 @@
 def activity_notifications(expenditure: list[int], d: int):
-    pass
+    for n in range(len(expenditure)):
+        days_expenditure_index = d + 1
+        trailing_expenses = expenditure[n:days_expenditure_index]
+        median = median_calculator(trailing_expenses)
+        days_expenditure = expenditure[days_expenditure_index]
+        if median >= days_expenditure:
+            #             send_notification
+            pass
+        else:
+            pass
+            #             don't send expenditure
 
 
 def median_calculator(arr: list[int]):
