@@ -7,3 +7,4 @@
 5. [Birthday Cake Candles](https://www.hackerrank.com/challenges/birthday-cake-candles) [Easy]
 6. [Mini Max Sum](https://www.hackerrank.com/challenges/mini-max-sum) [Easy]
 7. [Time Conversion](https://www.hackerrank.com/challenges/time-conversion) [Easy]
+8. [Fraudulent Activity Notifications](https://www.hackerrank.com/challenges/fraudulent-activity-notifications) [Medium]
