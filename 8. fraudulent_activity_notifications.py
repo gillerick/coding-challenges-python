@@ -14,14 +14,13 @@ def activity_notifications(expenditure: list[int], d: int):
     return notifications
 
 
-def median_calculator(arr: list[int]):
-    length = len(arr)
-    index = length // 2
+def median_calculator(arr):
     sorted_arr = sorted(arr)
-    if length % 2 == 0:
-        return sum(sorted_arr[(index - 1):index + 1]) / 2
+    mid = len(arr) // 2
+    if len(arr) % 2 == 0:
+        return (sorted_arr[mid] + sorted_arr[mid - 1]) / 2
     else:
-        return sorted_arr[length // 2]
+        return sorted_arr[mid]
 
 
 if __name__ == "__main__":
