@@ -1,14 +1,15 @@
 def activity_notifications(expenditure: list[int], d: int):
     notifications: int = 0
-    for n in range(len(expenditure) - d):
-        trailing_expenses = expenditure[n:d]
+    days_expenditure_index = d
+    for n in range(len(expenditure) - days_expenditure_index):
+        trailing_expenses = expenditure[n:days_expenditure_index]
         expense_median = median_calculator(trailing_expenses)
-        days_expenditure = expenditure[d]
+        days_expenditure = expenditure[days_expenditure_index]
         if days_expenditure >= 2 * expense_median:
             notifications += 1
-            d += 1
+            days_expenditure_index += 1
         else:
-            d += 1
+            days_expenditure_index += 1
 
     return notifications
 
