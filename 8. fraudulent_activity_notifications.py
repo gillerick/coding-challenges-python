@@ -5,7 +5,7 @@ def activity_notifications(expenditure: list[int], d: int):
         trailing_expenses = expenditure[n:days_expenditure_index]
         expense_median = median_calculator(trailing_expenses)
         days_expenditure = expenditure[days_expenditure_index]
-        if days_expenditure >= 2*expense_median:
+        if days_expenditure >= 2 * expense_median:
             notifications += 1
             days_expenditure_index += 1
         else:
@@ -15,10 +15,11 @@ def activity_notifications(expenditure: list[int], d: int):
 
 
 def median_calculator(arr: list[int]):
-    sorted_arr = sorted(arr)
     length = len(arr)
+    index = length // 2
+    sorted_arr = sorted(arr)
     if length % 2 == 0:
-        return sum(sorted_arr[(length // 2 - 1):length // 2 + 1]) / 2
+        return sum(sorted_arr[(index - 1):index + 1]) / 2
     else:
         return sorted_arr[length // 2]
 
