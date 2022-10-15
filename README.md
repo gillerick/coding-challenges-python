@@ -10,3 +10,4 @@
 8. [Fraudulent Activity Notifications](https://www.hackerrank.com/challenges/fraudulent-activity-notifications) [Medium]
 9. [Text Wrap](https://www.hackerrank.com/challenges/text-wrap) [Easy]
 10. [Merge the Tools](https://www.hackerrank.com/challenges/merge-the-tools) [Medium]
+11. [Capitalize](https://www.hackerrank.com/challenges/capitalize) [Easy]
