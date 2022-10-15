@@ -9,3 +9,4 @@
 7. [Time Conversion](https://www.hackerrank.com/challenges/time-conversion) [Easy]
 8. [Fraudulent Activity Notifications](https://www.hackerrank.com/challenges/fraudulent-activity-notifications) [Medium]
 9. [Text Wrap](https://www.hackerrank.com/challenges/text-wrap) [Easy]
+10. [Merge the Tools](https://www.hackerrank.com/challenges/merge-the-tools) [Medium]
