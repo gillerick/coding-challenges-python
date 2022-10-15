@@ -8,3 +8,4 @@
 6. [Mini Max Sum](https://www.hackerrank.com/challenges/mini-max-sum) [Easy]
 7. [Time Conversion](https://www.hackerrank.com/challenges/time-conversion) [Easy]
 8. [Fraudulent Activity Notifications](https://www.hackerrank.com/challenges/fraudulent-activity-notifications) [Medium]
+9. [Text Wrap](https://www.hackerrank.com/challenges/text-wrap) [Easy]
