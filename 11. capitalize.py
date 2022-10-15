@@ -1,9 +1,9 @@
 def solve(s):
-    return ' '.join(map(str.capitalize, s.split()))
+    return ' '.join(i.capitalize() for i in s.split(' '))
 
 
 if __name__ == '__main__':
-    s = "erick ogayo 454t thth5656"
+    s = input()
 
     result = solve(s)
 
