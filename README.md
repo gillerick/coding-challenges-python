@@ -11,3 +11,6 @@
 9. [Text Wrap](https://www.hackerrank.com/challenges/text-wrap) [Easy]
 10. [Merge the Tools](https://www.hackerrank.com/challenges/merge-the-tools) [Medium]
 11. [Capitalize](https://www.hackerrank.com/challenges/capitalize) [Easy]
+12. [Minimum Bribes](https://www.hackerrank.com/challenges/new-year-chaos) [Medium]
+13. [Minimum Swaps 2](https://www.hackerrank.com/challenges/minimum-swaps-2) [Medium]
+13. [Compare the Triplets](https://www.hackerrank.com/challenges/compare-the-triplets/) [Easy]
