@@ -13,4 +13,5 @@
 11. [Capitalize](https://www.hackerrank.com/challenges/capitalize) [Easy]
 12. [Minimum Bribes](https://www.hackerrank.com/challenges/new-year-chaos) [Medium]
 13. [Minimum Swaps 2](https://www.hackerrank.com/challenges/minimum-swaps-2) [Medium]
-13. [Compare the Triplets](https://www.hackerrank.com/challenges/compare-the-triplets/) [Easy]
+14. [Compare the Triplets](https://www.hackerrank.com/challenges/compare-the-triplets/) [Easy]
+15. [An Interesting Game](https://www.hackerrank.com/challenges/an-interesting-game-1) [Medium]
