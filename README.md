@@ -17,3 +17,5 @@
 15. [An Interesting Game](https://www.hackerrank.com/challenges/an-interesting-game-1) [Medium]
 16. [Two Sub-arrays](https://www.hackerrank.com/challenges/two-subarrays/) [Hard]
 17. [Sherlock and Anagrams](https://www.hackerrank.com/challenges/sherlock-and-anagrams) [Medium]
+18. [Hackerland Radio Transmitters](https://www.hackerrank.com/challenges/hackerland-radio-transmitters) [Medium]
+19. [Minimum Loss](https://www.hackerrank.com/challenges/minimum-loss/) [Medium]
