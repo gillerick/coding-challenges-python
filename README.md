@@ -19,3 +19,4 @@
 17. [Sherlock and Anagrams](https://www.hackerrank.com/challenges/sherlock-and-anagrams) [Medium]
 18. [Hackerland Radio Transmitters](https://www.hackerrank.com/challenges/hackerland-radio-transmitters) [Medium]
 19. [Minimum Loss](https://www.hackerrank.com/challenges/minimum-loss/) [Medium]
+20. [Missing Numbers](https://www.hackerrank.com/challenges/missing-numbers) [Easy]
