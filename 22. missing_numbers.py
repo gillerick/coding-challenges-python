@@ -1,16 +1,15 @@
 def missingNumbers(arr, brr):
+    sorted_arr = sorted(arr)
+    sorted_brr = sorted(brr)
     temp = {}
-    temp1 = {}
     missing = []
-    for number in brr:
+    for number in sorted_brr:
         temp[number] = brr.count(number)
-    for n in arr:
-        temp1[n] = arr.count(n)
-    for n in arr:
-        if temp[n] != temp1[n]:
+    for n in sorted_arr:
+        if temp[n] != arr.count(n):
             missing.append(n)
-    sorted(missing)
-    print(f"{set(missing)}".replace("{", "").replace("}", "").replace(",", ""))
+    sorted_missing = sorted(missing)
+    print(f"{set(sorted_missing)}".replace("{", "").replace("}", "").replace(",", ""))
 
 
 if __name__ == '__main__':
