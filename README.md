@@ -15,3 +15,5 @@
 13. [Minimum Swaps 2](https://www.hackerrank.com/challenges/minimum-swaps-2) [Medium]
 14. [Compare the Triplets](https://www.hackerrank.com/challenges/compare-the-triplets/) [Easy]
 15. [An Interesting Game](https://www.hackerrank.com/challenges/an-interesting-game-1) [Medium]
+16. [Two Sub-arrays](https://www.hackerrank.com/challenges/two-subarrays/) [Hard]
+17. [Sherlock and Anagrams](https://www.hackerrank.com/challenges/sherlock-and-anagrams) [Medium]
