@@ -21,3 +21,4 @@
 19. [Minimum Loss](https://www.hackerrank.com/challenges/minimum-loss/) [Medium]
 20. [Missing Numbers](https://www.hackerrank.com/challenges/missing-numbers) [Easy]
 21. [Pairs](https://www.hackerrank.com/challenges/pairs/) [Medium]
+22. [Sherlock and Arrays](https://www.hackerrank.com/challenges/sherlock-and-array) [Easy]
