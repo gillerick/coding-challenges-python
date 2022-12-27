@@ -20,3 +20,4 @@
 18. [Hackerland Radio Transmitters](https://www.hackerrank.com/challenges/hackerland-radio-transmitters) [Medium]
 19. [Minimum Loss](https://www.hackerrank.com/challenges/minimum-loss/) [Medium]
 20. [Missing Numbers](https://www.hackerrank.com/challenges/missing-numbers) [Easy]
+21. [Pairs](https://www.hackerrank.com/challenges/pairs/) [Medium]
