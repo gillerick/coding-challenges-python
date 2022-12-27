@@ -22,3 +22,4 @@
 20. [Missing Numbers](https://www.hackerrank.com/challenges/missing-numbers) [Easy]
 21. [Pairs](https://www.hackerrank.com/challenges/pairs/) [Medium]
 22. [Sherlock and Arrays](https://www.hackerrank.com/challenges/sherlock-and-array) [Easy]
+23. [Maximum Sub-array Sum](https://www.hackerrank.com/challenges/maximum-subarray-sum) [Hard]
