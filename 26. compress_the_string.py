@@ -5,7 +5,7 @@ def compress_string(s: str):
         for j in range(1, len(s)):
             if s[i] == s[j]:
                 count += 1
-        output.append((count, s[i]))
+        output.append((count, int(s[i])))
     return output
 
 
