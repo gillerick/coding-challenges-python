@@ -1,8 +1,8 @@
 def climbing_leader_board(ranked, player):
-    unique_ranked = list(sorted(set(ranked), reverse=True))
+    unique_ranks = list(set(ranked))
     for game in player:
-        unique_ranked.append(game)
-        print(list(sorted(unique_ranked, reverse=True)).index(game) + 1, end="\n")
+        unique_ranks.append(game)
+        print(list(sorted(unique_ranks, reverse=True)).index(game) + 1, end="\n")
 
 
 if __name__ == '__main__':
