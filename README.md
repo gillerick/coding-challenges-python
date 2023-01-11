@@ -24,3 +24,4 @@
 22. [Sherlock and Arrays](https://www.hackerrank.com/challenges/sherlock-and-array) [Easy]
 23. [Maximum Sub-array Sum](https://www.hackerrank.com/challenges/maximum-subarray-sum) [Hard]
 24. [Compress the String](https://www.hackerrank.com/challenges/compress-the-string/) [Medium]
+25. [Playing with Numbers](https://www.hackerrank.com/challenges/playing-with-numbers) [Hard]
