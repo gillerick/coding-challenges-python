@@ -6,21 +6,11 @@ import unittest
 # increasing if a0 < a1 < ... < an. Sequence containing only one element is also considered to be strictly increasing.
 
 def almost_increasing_sequence(arr: list[int]):
-    count = 0
-    increasing = False
-    for i in range(len(arr)):
-        temp_array = arr.copy()
-        temp_array.remove(arr[i])
-        count = 0
-        for j in range(1, len(temp_array)):
-            if temp_array[j - 1] < temp_array[j]:
-                increasing = True
-            else:
-                count += 1
-    return True if increasing and count == 0 else False
+    f1 = sum([1 for a, b in zip(arr[:-1], arr[1:]) if a >= b]) <= 1
+    f2 = sum([1 for a, c in zip(arr[:-2], arr[2:]) if a >= c]) <= 1
+    return f1 and f2
 
 
-# ToDO: Fix failing tests
 class TestAlmostIncreasing(unittest.TestCase):
     def test_almost_increasing_arr(self):
         self.assertEqual(True, almost_increasing_sequence([1, 3, 2]))
