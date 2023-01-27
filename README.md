@@ -35,3 +35,13 @@
   an O(n)-time worst case, where n is the current number of elements in the stack, when an operation causes the list to
   resize its internal array.
 
+#### 2. Reversing Data Using a Stack (Data Structures & Algorithms in Python, page 235)
+
+- One technical detail worth noting is that we intentionally strip trailing newlines from lines as they are read, and
+  then re-insert newlines after each line when writing the resulting file. The reason for doing this is to handle a
+  special case in which the original file does not have a trailing newline for the final line.
+- If we exactly echoed the lines read from the file in reverse order, then the original last line would be followed
+  (without newline) by the original second-to-last line. In our implementation, we ensure that there will be a
+  separating newline in the result.
+
+
