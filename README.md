@@ -25,3 +25,13 @@
 23. [Maximum Sub-array Sum](https://www.hackerrank.com/challenges/maximum-subarray-sum) [Hard]
 24. [Compress the String](https://www.hackerrank.com/challenges/compress-the-string/) [Medium]
 25. [Playing with Numbers](https://www.hackerrank.com/challenges/playing-with-numbers) [Hard]
+
+#### DSA Designs
+
+#### 1. Array-Based Stack Implementation (Data Structures & Algorithms in Python, page 234)
+
+- The implementations for _top_, _is_empty_, and _len_ use constant time in the worst case. The O(1) time for push and
+  pop are **amortized** bounds a typical call to either of these methods uses constant time, but there is occasionally
+  an O(n)-time worst case, where n is the current number of elements in the stack, when an operation causes the list to
+  resize its internal array.
+
