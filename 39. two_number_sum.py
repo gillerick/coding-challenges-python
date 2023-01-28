@@ -3,15 +3,12 @@ import unittest
 
 # Time complexity -  O(N*2)
 def two_number_sum(array, target_sum):
-    numbers = []
     for i in range(len(array)):
-        for j in range(1, len(array)):
+        for j in range(i + 1, len(array)):
             first, second = array[i], array[j]
-            if first + second == target_sum and first != second:
-                numbers.append(first)
-                numbers.append(second)
-                return numbers
-    return numbers
+            if first + second == target_sum:
+                return [first, second]
+    return []
 
 
 class TestTwoNumberSum(unittest.TestCase):
