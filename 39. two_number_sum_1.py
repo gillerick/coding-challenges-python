@@ -1,16 +1,14 @@
 import unittest
 
 
+# Space complexity -  O(1)
+# Time complexity -  O(N)
 def two_number_sum(array, target_sum):
-    numbers = []
-    for i in range(len(array)):
-        for j in range(1, len(array)):
-            first, second = array[i], array[j]
-            if first + second == target_sum and first != second:
-                numbers.append(first)
-                numbers.append(second)
-                return numbers
-    return numbers
+    for element in array:
+        target = target_sum - element
+        if target in array and target is not element:
+            return [element, target]
+    return []
 
 
 class TestTwoNumberSum(unittest.TestCase):

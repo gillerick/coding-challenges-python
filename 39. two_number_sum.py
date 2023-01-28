@@ -1,6 +1,7 @@
 import unittest
 
 
+# Time complexity -  O(N*2)
 def two_number_sum(array, target_sum):
     numbers = []
     for i in range(len(array)):
