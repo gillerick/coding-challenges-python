@@ -5,24 +5,13 @@ import sys
 def smallest_difference(array_one, array_two):
     smallest = sys.maxsize
     smallest_nums = []
-    for i in range(len(array_one)):
-        first_element = array_one[i]
-        for j in range(len(array_two)):
-            second_element = array_two[j]
-            difference = absolute_diff(first_element, second_element)
+    for first in array_one:
+        for second in array_two:
+            difference = abs(first - second)
             if difference < smallest:
                 smallest = difference
-                smallest_nums = [first_element, second_element]
+                smallest_nums = [first, second]
     return smallest_nums
-
-
-def absolute_diff(first, second):
-    if first < 0 and second < 0:
-        return abs(abs(first) - abs(second))
-    elif first > 0 and second > 0:
-        return abs(first - second)
-    else:
-        return abs(first) + abs(second)
 
 
 class TestSmallestDifference(unittest.TestCase):
