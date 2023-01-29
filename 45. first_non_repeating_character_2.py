@@ -1,9 +1,15 @@
 import unittest
 
 
+# O(n) time | O(1) space
 def first_non_repeating_character(string):
+    frequencies = {}
+    for character in string:
+        frequencies[character] = frequencies.get(character, 0) + 1
+
     for i in range(len(string)):
-        if string.count(string[i]) == 1:
+        character = string[i]
+        if frequencies[character] == 1:
             return i
     return -1
 
