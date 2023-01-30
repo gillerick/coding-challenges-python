@@ -36,6 +36,10 @@ class QueueStack:
         self._data[self._front] = None  # help garbage collection
         self._front = (self._front + 1) % len(self._data)
         self._size -= 1
+        # This reduces the array to half of its current size, whenever the number of elements
+        # stored in it falls below one fourth of its capacity.
+        if 0 < self._size < len(self._data) // 4:
+            self._resize(len(self._data) // 2)
         return answer
 
     def is_empty(self):

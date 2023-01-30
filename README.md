@@ -44,4 +44,14 @@
   (without newline) by the original second-to-last line. In our implementation, we ensure that there will be a
   separating newline in the result.
 
+#### 3. Array-Based Queue Implementation (Data Structures & Algorithms in Python, page 241 - 246)
 
+| Operation    | Running Time |
+|--------------|:-------------:
+| Q.enqueue(e) | O(1)*        |
+| Q.dequeue()  | O(1)*        |
+| Q.first()    | O(1)         |     
+| Q.is_empty() | O(1)         |
+| len(Q)       | O(1)         | 
+
+*amortized
