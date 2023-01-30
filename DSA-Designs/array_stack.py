@@ -1,4 +1,4 @@
-class Empty(Exception):
+class EmptyStackException(Exception):
     """Error attempting to access an element from an empty container."""
     pass
 
@@ -29,7 +29,7 @@ class ArrayStack:
         """
 
         if self.is_empty():
-            raise Empty('Stack is empty')
+            raise EmptyStackException('Stack is empty')
         return self._data[-1]
 
     def pop(self):
@@ -39,5 +39,5 @@ class ArrayStack:
         """
 
         if self.is_empty():
-            raise Empty('Stack is empty')
+            raise EmptyStackException('Stack is empty')
         return self._data.pop()
