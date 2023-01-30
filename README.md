@@ -55,3 +55,15 @@
 | len(Q)       | O(1)         | 
 
 *amortized
+
+#### 4. Validating a Binary Sort Tree(BST)
+
+- Even though there is no memory used the space complexity of this operation is O(d) where d is the depth of the tree
+- The time complexity is O(n) where n is the number of nodes in the tree. This is because we are traversing through each
+  of the tree's nodes
+- For a valid BST, a node's value has to be greater than or equal to the minimum value and less than the maximum value.
+
+  ```python
+  if tree.value < minValue or tree.value >= maxValue:
+    return False
+  ```
