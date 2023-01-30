@@ -14,7 +14,7 @@ class TreeNode:
 def is_valid_bst(root: TreeNode, lower=float('-inf'), upper=float('inf')):
     if not root:
         return True
-    if not lower < root.value < upper:
+    if not lower <= root.value < upper:
         return False
     return is_valid_bst(root.left, lower, root.value) and is_valid_bst(root.right, root.value, upper)
 
