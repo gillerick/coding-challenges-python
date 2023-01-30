@@ -19,13 +19,18 @@ class QueueStack:
 
     def enqueue(self, element):
         """Adds element to the back of the queue"""
-        pass
+        # Check the first None element, if any append element at position
+        # If not, increase size of queue and insert element at first None position
+        if self._size == len(self._data):
+            pass
+        self._size = len(self._data) * 2
 
     def dequeue(self, element):
         """
         Remove and return the first element of the queue.
         Raise EmptyQueueException if queue is empty
         """
+        # 1. Check if queue is empty
         if self.is_empty():
             raise EmptyQueueException("Queue is empty")
         pass
@@ -43,3 +48,13 @@ class QueueStack:
         if self.is_empty():
             raise EmptyQueueException("Queue is empty")
         return self._data[self._front]
+
+    def resize(self, capacity):
+        """Resize to a new list of capacity >= len(self)."""
+        old = self._data  # keep track of existing list
+        self._data = [None] * capacity  # allocate list with new capacity
+        walk = self._front
+        for k in range(self._size):  # only consider existing elements
+            self._data[k] = old[walk]  # intentionally shift indices
+            walk = (1 + walk) % len(old)  # use old size as modulus
+        self._front = 0  # realign front
