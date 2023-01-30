@@ -22,8 +22,10 @@ class QueueStack:
         # Check the first None element, if any append element at position
         # If not, increase size of queue and insert element at first None position
         if self._size == len(self._data):
-            pass
-        self._size = len(self._data) * 2
+            self._resize(2 * len(self._data))  # double the size of the array
+        avail = (self._front + self._size) % len(self._data)
+        self._data[avail] = element
+        self._size += 1
 
     def dequeue(self, element):
         """
@@ -49,7 +51,7 @@ class QueueStack:
             raise EmptyQueueException("Queue is empty")
         return self._data[self._front]
 
-    def resize(self, capacity):
+    def _resize(self, capacity):
         """Resize to a new list of capacity >= len(self)."""
         old = self._data  # keep track of existing list
         self._data = [None] * capacity  # allocate list with new capacity
