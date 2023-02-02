@@ -1,7 +1,7 @@
 import unittest
 
 
-# O(n) time | O(1) time
+# O(n^2) time | O(1) time
 def valid_starting_city(distances, fuel, mpg):
     cities = len(distances)
 
