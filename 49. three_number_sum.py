@@ -44,6 +44,7 @@ class TestThreeNumberSum(unittest.TestCase):
                           [4, 5, 9],
                           [4, 6, 8],
                           [5, 6, 7]], three_number_sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 15], 18))
+        self.assertEqual([0, 0, 0], three_number_sum([0, 0, 0, 0], 0))
 
 
 if __name__ == "__main__":
