@@ -25,7 +25,10 @@ def closest_value_in_bst(root: BST, target: int, closest=float("inf")):
 
 class TestClosesValueInBst(unittest.TestCase):
     def test_closest_value_in_bst(self):
-        self.assertEqual(13,
-                         closest_value_in_bst(
-                             BST(10, left=BST(5, right=BST(5), left=BST(2, BST(1))),
-                                 right=BST(15, left=BST(13, right=BST(14)), right=BST(22))), 12))
+        tree = BST(10, left=BST(5, right=BST(5), left=BST(2, BST(1))),
+                   right=BST(15, left=BST(13, right=BST(14)), right=BST(22)))
+        self.assertEqual(13, closest_value_in_bst(tree, 12))
+
+
+if __name__ == "__main__":
+    unittest.main()
