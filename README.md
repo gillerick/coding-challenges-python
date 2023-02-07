@@ -26,6 +26,7 @@
 24. [Compress the String](https://www.hackerrank.com/challenges/compress-the-string/) [Medium]
 25. [Playing with Numbers](https://www.hackerrank.com/challenges/playing-with-numbers) [Hard]
 26. [Index of first occurrence](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/) [Medium]
+27. [Move Zeros](https://leetcode.com/problems/move-zeroes/) [Easy]
 
 #### DSA Designs
 
