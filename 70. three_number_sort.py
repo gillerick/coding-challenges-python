@@ -2,13 +2,12 @@ import unittest
 
 
 def three_number_sort(array, order):
+    pointer = 0
     for o in order:
-        pointer = 0
-        for j in range(1, len(array)):
+        for j in range(len(array)):
             if array[j] == o:
                 array[j], array[pointer] = array[pointer], array[j]
                 pointer += 1
-    array.reverse()
     return array
 
 
