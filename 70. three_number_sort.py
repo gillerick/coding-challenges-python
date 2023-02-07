@@ -4,7 +4,7 @@ import unittest
 def three_number_sort(array, order):
     pointer = 0
     for o in order:
-        for j in range(len(array)):
+        for j in range(pointer, len(array)):
             if array[j] == o:
                 array[j], array[pointer] = array[pointer], array[j]
                 pointer += 1
