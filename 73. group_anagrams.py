@@ -1,20 +1,18 @@
 import unittest
 
 
+# O (w * n * log(n)) time | O(wn) space
+# w - number of words, n - length of longest word
 def group_anagrams(words: list[str]):
     anagrams = {}
-    result = []
-    for word in words:
-        ordered_word = str(sorted(word))
+    for word in words:  # O(w)
+        ordered_word = str(sorted(word))  # O(nlog(n))
         if ordered_word not in anagrams:
             anagrams[ordered_word] = [word]
         else:
             anagrams[ordered_word].append(word)
 
-    for _, anagram_sets in anagrams.items():
-        result.append(anagram_sets)
-
-    return result
+    return list(anagrams.values())
 
 
 class TestGroupAnagrams(unittest.TestCase):
