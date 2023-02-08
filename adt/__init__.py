@@ -3,3 +3,9 @@ class BST:
         self.value = value
         self.left = left
         self.right = right
+
+
+class LinkedList:
+    def __init__(self, data, _next=None):
+        self.data = data
+        self.next = _next

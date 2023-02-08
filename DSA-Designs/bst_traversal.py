@@ -1,6 +1,6 @@
 import unittest
 
-from bst import BST
+from adt import BST
 
 
 def in_order_traversal(tree: BST, array: list[int]):

@@ -66,7 +66,7 @@
 - For a valid BST, a node's value has to be greater than or equal to the minimum value and less than the maximum value.
 
   ```python
-  if tree.value < minValue or tree.value >= maxValue:
+  if tree.data < minValue or tree.data >= maxValue:
     return False
   ```
 
