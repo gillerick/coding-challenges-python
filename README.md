@@ -69,3 +69,62 @@
   if tree.value < minValue or tree.value >= maxValue:
     return False
   ```
+
+#### 5. Linked Lists
+
+- A linked list is a data structure that represents a sequence of **nodes**. In a _singly linked list_, each node points
+  to the next node in the linked list. In a _doubly linked list_, each node points to both the next node and the
+  previous node in the linked list.
+- In a linked list, the least significant digit always comes first. So that 2 -> 4 -> 7 -> 1 represents the
+  number `1742`
+
+##### 5.1. Creating a linked list
+
+```java
+class Node {
+  Node next = null;
+  int data;
+
+  public Node(int d) {
+    data = d;
+  }
+
+  void appendToTail(int d) {
+    Node end = new Node(d);
+    Node n = this;
+    while (n.next != null) {
+      n = n.next;
+    }
+    n.next = end;
+  }
+}
+```
+
+##### 5.2. Deleting a node from a singly linked list
+
+- Given a node n, we first find the previous node `prev` and set `prev.next` equal to `n.next`. If the list is doubly
+  linked, we must also update `n.next` to set `n.next.prev` to `n.prev`.
+- The important thing to remember is (1) To check for the null pointer and (2) To update the head or tail pointer as
+  necessary
+- If this is implemented in a language that requires the developer to do memory management, deallocating the removed
+  node should be considered.
+
+```java
+Node deleteNode(Node head, int d) {
+
+    Node n = head;
+
+    if (n.data == d) {
+      return head.next; /*moved head*/
+    }
+
+    while (n.next != null) {
+      if (n.next.data == d) {
+        n.next = n.next.next;
+        return head; /*head did not change*/
+      }
+      n = n.next;
+    }
+    return head;
+  }
+```
