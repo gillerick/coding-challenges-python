@@ -1,7 +1,6 @@
 import unittest
 
 
-# O(n) time | O(n) asymptotic, may be higher in practice
 def balanced_brackets(string):
     bracket_pairs = {"}": "{", "]": "[", ")": "("}
     stack = []
