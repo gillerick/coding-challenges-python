@@ -1,16 +1,20 @@
 import unittest
 
 
+# O(n) time | O(n) space
 def balanced_brackets(string):
     bracket_pairs = {"}": "{", "]": "[", ")": "("}
-    stack = []
+    stack = {}
+    stack_idx = -1
     for character in string:
         if character in bracket_pairs.values():
-            stack.append(character)
+            stack_idx += 1
+            stack[stack_idx] = character
         elif character in bracket_pairs.keys():
-            if not stack or stack.pop() != bracket_pairs[character]:
+            if not stack or stack[stack_idx] != bracket_pairs[character]:
                 return False
-    return not stack
+            stack_idx -= 1
+    return stack_idx == -1
 
 
 class TestBalancedBrackets(unittest.TestCase):
