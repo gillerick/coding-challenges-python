@@ -1,13 +1,14 @@
 import unittest
 
 
+# O(n) time | O(1) space - optimal
 def best_time_to_buy_and_sell_stock(prices: list[int]):
-    n = len(prices)
     maximum_profit = 0
     minimum_buy = prices[0]
-    for i in range(n):
-        maximum_profit = max(prices[i] - minimum_buy, maximum_profit)
-        minimum_buy = min(minimum_buy, prices[i])
+    for price in prices:
+        minimum_buy = min(minimum_buy, price)
+        current_profit = price - minimum_buy
+        maximum_profit = max(current_profit, maximum_profit)
 
     return maximum_profit
 

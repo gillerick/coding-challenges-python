@@ -1,6 +1,7 @@
 import unittest
 
 
+# O(n^2) time | O(1) space - suboptimal
 def best_time_to_buy_and_sell_stock(prices: list[int]):
     n = len(prices)
     maximum_profit = 0

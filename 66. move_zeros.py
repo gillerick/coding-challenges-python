@@ -14,6 +14,7 @@ def move_zeros(nums: list[int]):
 class TestMoveZeros(unittest.TestCase):
     def test_move_zeros(self):
         self.assertEqual([1, 3, 12, 0, 0], move_zeros([0, 1, 0, 3, 12]))
+        self.assertEqual([3, 12, 0, 0, 0], move_zeros([0, 0, 0, 3, 12]))
         self.assertEqual([0], move_zeros([0]))
 
 
