@@ -39,10 +39,13 @@ def sum_of_linked_list(linked_list_one: LinkedList, linked_list_two: LinkedList)
 
 class TestSumOfLinkedList(unittest.TestCase):
     def test_sum_of_linked_list(self):
-        linked_list_1 = LinkedList(2, LinkedList(4, LinkedList(7, LinkedList(1))))
-        linked_list_2 = LinkedList(9, LinkedList(4, LinkedList(5)))
-        self.assertEqual(LinkedList(1, LinkedList(9, LinkedList(2, LinkedList(2)))),
-                         sum_of_linked_list(linked_list_1, linked_list_2))
+        linked_list_one = LinkedList(2, LinkedList(4, LinkedList(7, LinkedList(1))))
+        linked_list_two = LinkedList(9, LinkedList(4, LinkedList(5)))
+        results = sum_of_linked_list(linked_list_one, linked_list_two)
+        self.assertEqual(1, results.value)
+        self.assertEqual(9, results.next.value)
+        self.assertEqual(2, results.next.next.value)
+        self.assertEqual(2, results.next.next.next.value)
 
 
 if __name__ == "__main__":
