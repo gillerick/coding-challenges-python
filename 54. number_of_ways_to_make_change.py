@@ -15,10 +15,23 @@ def number_of_ways_to_make_change(n, denominations):
     return ways[n]
 
 
+def number_of_ways_to_make_change_improved(n, denominations):
+    ways = [1] + [0 for _ in range(n)]
+    for denomination in denominations:
+        for change in range(denomination, n + 1):
+            ways[change] += ways[change - denomination]
+
+    return ways[-1]
+
+
 class TestNumberOfWaysToMakeChange(unittest.TestCase):
     def test_number_of_ways_to_make_change(self):
         self.assertEqual(2, number_of_ways_to_make_change(6, [1, 5]))
         self.assertEqual(4, number_of_ways_to_make_change(10, [1, 5, 10, 25]))
+
+    def test_number_of_ways_to_make_change_improved(self):
+        self.assertEqual(2, number_of_ways_to_make_change_improved(6, [1, 5]))
+        self.assertEqual(4, number_of_ways_to_make_change_improved(10, [1, 5, 10, 25]))
 
 
 if __name__ == "__main__":
