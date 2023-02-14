@@ -47,6 +47,21 @@ def is_valid_bst_in_order_traversal(root: TreeNode):
     return in_order_traversal(root)
 
 
+def is_valid_bst_stack(root: TreeNode):
+    stack = []
+    prev_val = float('-inf')
+    while root or stack:
+        while root:
+            stack.append(root)
+            root = root.left
+        root = stack.pop()
+        if root.value <= prev_val:
+            return False
+        prev_val = root.value
+        root = root.right
+    return True
+
+
 class TestIsValidBst(unittest.TestCase):
     def test_is_valid_bst(self):
         self.assertEqual(True, is_valid_bst(TreeNode(15, TreeNode(10, None, None), None)))
@@ -62,6 +77,12 @@ class TestIsValidBst(unittest.TestCase):
         self.assertEqual(True, is_valid_bst_in_order_traversal(TreeNode(15, TreeNode(10, None, None), None)))
         self.assertEqual(True, is_valid_bst_in_order_traversal(TreeNode(10, None, None)))
         self.assertEqual(False, is_valid_bst_in_order_traversal(
+            TreeNode(10, TreeNode(17, None, None), TreeNode(15, None, None))))
+
+    def test_is_valid_bst_stack(self):
+        self.assertEqual(True, is_valid_bst_stack(TreeNode(15, TreeNode(10, None, None), None)))
+        self.assertEqual(True, is_valid_bst_stack(TreeNode(10, None, None)))
+        self.assertEqual(False, is_valid_bst_stack(
             TreeNode(10, TreeNode(17, None, None), TreeNode(15, None, None))))
 
 
