@@ -11,6 +11,20 @@ def in_order_traversal(tree: BST, array: list[int]):
     return array
 
 
+def in_order_traversal_stack(tree: BST) -> list[int]:
+    stack = []
+    result = []
+    curr = tree
+    while curr or stack:
+        while curr:
+            stack.append(curr)
+            curr = curr.left
+        curr = stack.pop()
+        result.append(curr.value)
+        curr = curr.right
+    return result
+
+
 def pre_order_traversal(tree: BST, array: list[int]):
     if tree is not None:
         array.append(tree.value)
@@ -34,6 +48,9 @@ test_tree = BST(10, left=BST(5, right=BST(5), left=BST(2, left=BST(1), right=Non
 class TestBstTreeTraversal(unittest.TestCase):
     def test_in_order_traversal(self):
         self.assertEqual([1, 2, 5, 5, 10, 15, 22], in_order_traversal(test_tree, []))
+
+    def test_in_order_traversal_stack(self):
+        self.assertEqual([1, 2, 5, 5, 10, 15, 22], in_order_traversal_stack(test_tree))
 
     def test_pre_order_traversal(self):
         self.assertEqual([10, 5, 2, 1, 5, 15, 22], pre_order_traversal(test_tree, []))
