@@ -1,8 +1,15 @@
 import unittest
 
+"""
+The algorithm initializes two variables, max_sum and current_sum, both initially set to the first element of the 
+input list. It then loops through the rest of the list, adding each element to current_sum and comparing it to 
+max_sum. If current_sum becomes greater than max_sum, then max_sum is updated. If current_sum becomes negative, 
+it is reset to zero, since any subarray including a negative sum would not be a candidate for maximum subarray.
+"""
+
 
 # O(n) time | O(1) space
-def maximum_subarray(nums: list[int]):
+def maximum_subarray_kadane(nums: list[int]):
     max_sum = nums[0]
     current_sum = 0
     for i in range(len(nums)):
@@ -41,15 +48,15 @@ def maximum_subarray_dp(nums: list[int]) -> int:
 
 
 class TestMaximumSubArray(unittest.TestCase):
-    def test_maximum_subarray(self):
-        self.assertEqual(6, maximum_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
-        self.assertEqual(1, maximum_subarray([1]))
-        self.assertEqual(23, maximum_subarray([5, 4, -1, 7, 8]))
+    def test_maximum_subarray_kadane(self):
+        self.assertEqual(6, maximum_subarray_kadane([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+        self.assertEqual(1, maximum_subarray_kadane([1]))
+        self.assertEqual(23, maximum_subarray_kadane([5, 4, -1, 7, 8]))
 
     def test_maximum_subarray_dp(self):
-        self.assertEqual(6, maximum_subarray([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
-        self.assertEqual(1, maximum_subarray([1]))
-        self.assertEqual(23, maximum_subarray([5, 4, -1, 7, 8]))
+        self.assertEqual(6, maximum_subarray_dp([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
+        self.assertEqual(1, maximum_subarray_dp([1]))
+        self.assertEqual(23, maximum_subarray_dp([5, 4, -1, 7, 8]))
 
 
 if __name__ == "__main__":
