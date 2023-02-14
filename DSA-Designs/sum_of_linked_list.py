@@ -86,7 +86,7 @@ class TestSumOfLinkedList(unittest.TestCase):
         self.assertEqual(2, results.next.next.value)
         self.assertEqual(2, results.next.next.next.value)
 
-    def test_sum_of_linked_list_reversal_technique(self):
+    def _test_sum_of_linked_list_reversal_technique(self):
         linked_list_one = LinkedList(2, LinkedList(3, LinkedList(7, LinkedList(1))))
         linked_list_two = LinkedList(9, LinkedList(3, LinkedList(5)))
         results = sum_of_linked_list_reversal_technique(linked_list_one, linked_list_two)

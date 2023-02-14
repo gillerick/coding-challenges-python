@@ -15,7 +15,7 @@ def remove_islands(matrix):
 
             if matrix[row][col] != 1:
                 continue
-            find_ones_connected_to_border(matrix, row, col, ones_connected_to_border)
+            find_and_mark_ones_connected_to_border(matrix, row, col, ones_connected_to_border)
 
     for row in range(1, len(matrix) - 1):
         for col in range(1, len(matrix[row]) - 1):
@@ -26,7 +26,7 @@ def remove_islands(matrix):
     return matrix
 
 
-def find_ones_connected_to_border(matrix, start_row, start_col, aux_matrix):
+def find_and_mark_ones_connected_to_border(matrix, start_row, start_col, aux_matrix):
     stack = [(start_row, start_col)]
 
     while len(stack) > 0:

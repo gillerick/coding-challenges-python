@@ -20,7 +20,7 @@ def expand_string(input_string: str) -> str:
             # Push the number onto the stack
             stack.append(int(num))
         elif input_string[i] == "[":
-            stack.append('[')
+            stack.append('')
             i += 1
         elif input_string[i] == ']':
             nested = ''
@@ -34,7 +34,7 @@ def expand_string(input_string: str) -> str:
             # # Push the character onto the stack
             stack.append(input_string[i])
             i += 1
-    return ''.join(stack).replace('[', '')
+    return ''.join(stack)
 
 
 class TestExpandString(unittest.TestCase):
