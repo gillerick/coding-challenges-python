@@ -18,6 +18,18 @@ def nth_prime(n):
     return primes[-1]
 
 
+"""
+In this implementation, the list is_prime is used to store the results of the primality tests for each number up 
+to a limit (in this case, 10^6). The first time a number is checked for primality, its value is computed and stored 
+in the is_prime list. The next time the number is encountered, the result can be retrieved from the is_prime list, 
+rather than being computed again. 
+
+This approach reduces the number of primality tests that need to be performed, making the code faster and more 
+efficient. The size of the is_prime list can be adjusted depending on the required level of efficiency and memory 
+usage. 
+"""
+
+
 def nth_prime_dp(n):
     primes = [2]
     candidate = 3

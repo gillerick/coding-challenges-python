@@ -10,8 +10,7 @@ def word_break(s, word_dict):
 
 def word_break_dp(s, word_dict):
     n = len(s)
-    dp = [False] * (n + 1)
-    dp[0] = True
+    dp = [True] + [False] * n
 
     for i in range(1, n + 1):
         for j in range(i):
