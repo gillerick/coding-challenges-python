@@ -4,6 +4,7 @@ import unittest
 def three_number_sum(array, target_sum):
     array.sort()
     three_sums = []
+    seen = set()
     # We are looping up to the third last number
     for i in range(len(array) - 2):
         left_idx = i + 1
@@ -14,9 +15,12 @@ def three_number_sum(array, target_sum):
             right = array[right_idx]
             potential_sum = current + left + right
             if target_sum == potential_sum:
-                three_sums.append([current, left, right])
+                seen_key = str([current, left, right])
+                if seen_key not in seen:
+                    three_sums.append([current, left, right])
                 right_idx -= 1
                 left_idx += 1
+                seen.add(seen_key)
             elif potential_sum > target_sum:
                 right_idx -= 1
             elif potential_sum < target_sum:
@@ -44,7 +48,7 @@ class TestThreeNumberSum(unittest.TestCase):
                           [4, 5, 9],
                           [4, 6, 8],
                           [5, 6, 7]], three_number_sum([1, 2, 3, 4, 5, 6, 7, 8, 9, 15], 18))
-        self.assertEqual([0, 0, 0], three_number_sum([0, 0, 0, 0], 0))
+        self.assertEqual([[0, 0, 0]], three_number_sum([0, 0, 0, 0], 0))
 
 
 if __name__ == "__main__":
