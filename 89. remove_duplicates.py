@@ -11,10 +11,21 @@ def remove_duplicates(nums: list[int]) -> list[int]:
     return nums
 
 
+def remove_duplicates_two_pointer(nums: list[int]) -> list[int]:
+    left = 0
+    right = len(nums)
+
+    return nums
+
+
 class TestRemoveDuplicates(unittest.TestCase):
     def test_remove_duplicates(self):
         self.assertEqual([1, 2], remove_duplicates([1, 1, 2]))
         self.assertEqual([0, 1, 2, 3, 4], remove_duplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
+
+    def test_remove_duplicates_two_pointer(self):
+        self.assertEqual([1, 2], remove_duplicates_two_pointer([1, 1, 2]))
+        self.assertEqual([0, 1, 2, 3, 4], remove_duplicates_two_pointer([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
 
 
 if __name__ == "__main__":
