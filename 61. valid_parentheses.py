@@ -4,8 +4,7 @@ import unittest
 def valid_parenthesis(string_input):
     stack = []
     brackets = {"}": "{", "]": "[", ")": "("}  # keys -> closing, values -> opening
-    for i in range(len(string_input)):
-        character = string_input[i]
+    for character in string_input:
         if character in brackets.values():
             stack.append(character)
         elif character in brackets.keys():
