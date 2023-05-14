@@ -13,7 +13,13 @@ def remove_duplicates(nums: list[int]) -> list[int]:
 
 def remove_duplicates_two_pointer(nums: list[int]) -> list[int]:
     left = 0
-    right = len(nums)
+    right = 1
+    while right < len(nums) - 1:
+        if nums[left] != nums[right]:
+            right += 1
+            left += 1
+        else:
+            nums.pop(left)
 
     return nums
 
