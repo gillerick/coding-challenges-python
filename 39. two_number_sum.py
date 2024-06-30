@@ -36,6 +36,7 @@ def two_number_sum_array_memo(array, target_sum):
 
 class TestTwoNumberSum(unittest.TestCase):
     def test_two_number_sum(self):
+        self.assertEqual([3, 3], two_number_sum_hashmap_memo([3, 3], 6))
         self.assertEqual([11, -1], two_number_sum([3, 5, -4, 8, 11, 1, -1, 6], 10))
         self.assertEqual([4, 6], two_number_sum([4, 6], 10))
         self.assertEqual([4, 1], two_number_sum([4, 6, 1], 5))
@@ -43,6 +44,7 @@ class TestTwoNumberSum(unittest.TestCase):
         self.assertEqual([8, 9], two_number_sum([1, 2, 3, 4, 5, 6, 7, 8, 9], 17))
 
     def test_two_number_sum_hashmap_memo(self):
+        self.assertEqual([3, 3], two_number_sum_hashmap_memo([3, 3], 6))
         self.assertEqual([4, 6], two_number_sum_hashmap_memo([4, 6], 10))
         self.assertEqual([11, -1], two_number_sum_hashmap_memo([3, 5, -4, 8, 11, 1, -1, 6], 10))
         self.assertEqual([4, 1], two_number_sum_hashmap_memo([4, 6, 1], 5))
@@ -50,6 +52,7 @@ class TestTwoNumberSum(unittest.TestCase):
         self.assertEqual([8, 9], two_number_sum_hashmap_memo([1, 2, 3, 4, 5, 6, 7, 8, 9], 17))
 
     def test_two_number_sum_array_memo(self):
+        self.assertEqual([3, 3], two_number_sum_hashmap_memo([3, 3], 6))
         self.assertEqual([4, 6], two_number_sum_array_memo([4, 6], 10))
         self.assertEqual([4, 1], two_number_sum_array_memo([4, 6, 1], 5))
         self.assertEqual([11, -1], two_number_sum_array_memo([3, 5, -4, 8, 11, 1, -1, 6], 10))
