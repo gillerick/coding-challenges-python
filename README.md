@@ -49,12 +49,12 @@
 #### 3. Array-Based Queue Implementation (Data Structures & Algorithms in Python, page 241 - 246)
 
 | Operation    | Running Time |
-|--------------|:-------------:
-| Q.enqueue(e) | O(1)*        |
-| Q.dequeue()  | O(1)*        |
-| Q.first()    | O(1)         |     
-| Q.is_empty() | O(1)         |
-| len(Q)       | O(1)         | 
+|--------------|:------------:
+| Q.enqueue(e) |    O(1)*     |
+| Q.dequeue()  |    O(1)*     |
+| Q.first()    |     O(1)     |     
+| Q.is_empty() |     O(1)     |
+| len(Q)       |     O(1)     | 
 
 *amortized
 
@@ -128,3 +128,31 @@ Node deleteNode(Node head, int d) {
     return head;
   }
 ```
+
+#### 5. The Queue Data Structure
+
+- A queue is a data structure in which all the additions are made at one end (head or front of queue) and all deletions
+  are made at one end (rear or tail of the queue)
+- It is a FIFO data structure
+
+#### 5.1. Applications
+
+- CPU scheduling
+- Data is transferred asynchronously between two processes
+- Graph traversal algorithms
+- Transport and operations management
+- File servers
+- IO buffers
+- Printer queues
+- Phone calls to customer service hotlines
+- Resource is shared among multiple consumers
+
+#### 5.2. Operations
+
+- **Enqueue** - to put an item into the queue
+- **Dequeue** - to remove an item from the front of the queue
+- Lists are not efficient for implementing queues. While **appends** and **pops** from the end of the list are fast, **inserts** or **pops** from the beginning of the list is slow because all the other elements have to be shifted by
+  one.
+
+![img.png](img.png)
+
