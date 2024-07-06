@@ -24,6 +24,26 @@ class LinkedList:
 
         current.next = new_node
 
+    def delete(self, data):
+        # Base cases: 1. Empty linked list 2. Data to delete is in head
+        if self.head is None:
+            return None
+
+        if self.head.data == data:
+            self.head = self.head.next
+            return data
+
+        # 1->2->4->8
+        previous = self.head
+        current = self.head.next
+        while previous and current:
+            if current.data == data:
+                previous.next = current.next
+                return data
+            previous = previous.next
+            current = current.next
+        return None
+
     def __str__(self):
         output = []
         current = self.head
@@ -58,6 +78,13 @@ class TestGetMidpoint(unittest.TestCase):
         self.assertEqual(4, get_midpoint(create_linked_list_from_list([3, 1, 4, 1, 5])))
         self.assertEqual(8, get_midpoint(create_linked_list_from_list([2, 7, 1, 8, 2, 8, 4])))
         self.assertEqual(0, get_midpoint(create_linked_list_from_list([12, 3, 0, 9, 2])))
+
+
+class TestDeleteElementFromLinkedList(unittest.TestCase):
+    def test_delete_element(self):
+        self.assertEqual(1, create_linked_list_from_list([1, 2, 4, 8]).delete(1))
+        self.assertEqual(None, create_linked_list_from_list([1, 2, 4, 8]).delete(9))
+        self.assertEqual(4, create_linked_list_from_list([1, 2, 4, 8]).delete(4))
 
 
 if __name__ == "__main__":
