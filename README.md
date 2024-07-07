@@ -156,3 +156,10 @@ Node deleteNode(Node head, int d) {
 
 ![img.png](img.png)
 
+##### 5.3. Priority Queue
+
+#### 6. Linked Lists
+
+
+
+
