@@ -26,6 +26,31 @@ class DLL(LinkedList):
         current.next = new_node
         new_node.prev = current
 
+    def search(self, data):
+        current = self.head
+
+        while current.next:
+            if current.data == data:
+                return current
+            current = current.next
+        return None
+
+    def delete(self, data):
+
+        node_to_delete = self.search(data)
+
+        if not node_to_delete:
+            return
+
+        if node_to_delete == self.head:
+            self.head = self.head.next
+
+        if node_to_delete.prev:
+            node_to_delete.prev.next = node_to_delete.next
+
+        if node_to_delete.next:
+            node_to_delete.next.prev = node_to_delete.prev
+
     def __str__(self):
         output = []
         current = self.head
