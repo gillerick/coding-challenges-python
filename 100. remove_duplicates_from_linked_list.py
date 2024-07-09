@@ -57,9 +57,40 @@ def remove_duplicate(linked_list: LinkedList):
     return linked_list
 
 
+def remove_duplicates_hash_map(linked_list: LinkedList):
+    if linked_list.head is None:
+        return linked_list
+
+    seen = {}
+    current = linked_list.head
+    previous = None
+
+    while current is not None:
+        if current.data in seen:
+            previous.next = current.next
+        else:
+            seen[current.data] = True
+            previous = current
+        current = current.next
+
+    return linked_list
+
+
 class TestRemoveDuplicate(unittest.TestCase):
-    def test_remove_duplicate_single_element(self):
-        self.assertEqual('', remove_duplicate(linked_list_from_array([2, 3, 3, 4])))
+    def test_remove_duplicates_hash_map_single_element(self):
+        self.assertEqual('2->3->4', str(remove_duplicates_hash_map(linked_list_from_array([2, 3, 3, 4]))))
+
+    def test_remove_duplicates_hash_map_multiple_elements(self):
+        self.assertEqual('2->3->4->5',
+                         str(remove_duplicates_hash_map(linked_list_from_array([2, 3, 3, 4, 4, 4, 5, 5]))))
+
+    def test_remove_duplicates_hash_map_multiple_elements_unordered(self):
+        self.assertEqual('2->3->4->5',
+                         str(remove_duplicates_hash_map(linked_list_from_array([2, 3, 4, 4, 4, 5, 5, 3, 4, 5, 2]))))
+
+    def test_remove_duplicates_hash_map_empty_linked_list(self):
+        self.assertEqual('',
+                         str(remove_duplicates_hash_map(linked_list_from_array([]))))
 
 
 if __name__ == "__main__":
