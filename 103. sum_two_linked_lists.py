@@ -34,7 +34,7 @@ def linked_list_from_array(elements: list):
 def sum_linked_lists(linked_list_one, linked_list_two):
     carry = 0
     total = 0
-    place_value = 0
+    place_value_multiplier = 0
     node_one = linked_list_one.head
     node_two = linked_list_two.head
 
@@ -43,12 +43,12 @@ def sum_linked_lists(linked_list_one, linked_list_two):
         value_two = node_two.data if node_two is not None else 0
         sum_of_values = value_one + value_two + carry
 
-        total += (sum_of_values % 10) * (10 ** place_value)
+        total += (sum_of_values % 10) * (10 ** place_value_multiplier)
         carry = sum_of_values // 10
 
         node_one = node_one.next if node_one is not None else None
         node_two = node_two.next if node_two is not None else None
-        place_value += 1
+        place_value_multiplier += 1
     return total
 
 
