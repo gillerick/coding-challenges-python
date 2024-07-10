@@ -38,7 +38,7 @@ def remove_k_digits(num: str, k: int) -> int:
             stack.pop()
             k -= 1
         stack.push(char)
-    while stack and k > 0:
+    while not stack.is_empty() and k > 0:
         stack.pop()
         k -= 1
 
