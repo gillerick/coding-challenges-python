@@ -10,15 +10,14 @@ def is_palindrome_one_liner(word):
 
 # O(n) time | O(1) space
 def is_palindrome_two_pointer(word):
-    left_idx = 0
-    right_idx = len(word) - 1
-
-    while left_idx < right_idx:
-        if word[left_idx] != word[right_idx]:
+    left_pointer = 0
+    right_pointer = len(word) - 1
+    while left_pointer < right_pointer:
+        if word[left_pointer] != word[right_pointer]:
             return False
         else:
-            left_idx += 1
-            right_idx -= 1
+            left_pointer += 1
+            right_pointer -= 1
     return True
 
 
