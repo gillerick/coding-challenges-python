@@ -37,6 +37,16 @@ def is_palindrome_iterative(word):
     return word == "".join(reversed_chars)
 
 
+# O(n) time | O(n) space
+def is_palindrome_iterative_v2(word):
+    length = len(word)
+    for i in range(length // 2):
+        # Compare character at index i with the character at the mirrored index from the end (n - 1 - i)
+        if word[i] != word[length - 1 - i]:
+            return False
+    return True
+
+
 class TestIsPalindrome(unittest.TestCase):
     def test_is_palindrome(self):
         self.assertEqual(True, is_palindrome_one_liner("racecar"))
@@ -53,6 +63,10 @@ class TestIsPalindrome(unittest.TestCase):
     def test_is_palindrome_iterative(self):
         self.assertEqual(True, is_palindrome_iterative("racecar"))
         self.assertEqual(False, is_palindrome_iterative("cow"))
+
+    def test_is_palindrome_iterative_v2(self):
+        self.assertEqual(True, is_palindrome_iterative_v2("racecar"))
+        self.assertEqual(False, is_palindrome_iterative_v2("cow"))
 
 
 if __name__ == "__main__":
