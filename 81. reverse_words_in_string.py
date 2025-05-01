@@ -2,14 +2,15 @@ import unittest
 
 
 def reverse_words_in_string(string):
-    string = string.split()
-    left_idx = 0
-    right_idx = len(string) - 1
-    while left_idx < right_idx:
-        string[left_idx], string[right_idx] = string[right_idx], string[left_idx]
-        left_idx += 1
-        right_idx -= 1
-    return " ".join(string)
+    string_array = string.split()
+    left_pointer = 0
+    right_pointer = len(string_array) - 1
+    while left_pointer < right_pointer:
+        string_array[left_pointer], string_array[right_pointer] = string_array[right_pointer], string_array[left_pointer]
+        left_pointer += 1
+        right_pointer -= 1
+
+    return " ".join(string_array)
 
 
 class TestReverseWordsInString(unittest.TestCase):
