@@ -8,6 +8,12 @@ import unittest
 # put - (1) If already exists, update else add to the cache (2) Move to the front of the cache
 # LRU cache - (1) capacity static
 
+class CacheSizeCannotBeLessThanZero(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+
 class Node:
     def __init__(self, key, value):
         self.key = key
@@ -32,6 +38,7 @@ class LRUCache:
         self.tail = Node(0, 0)
         self.head.next = self.tail
         self.tail.previous = self.head
+        if capacity < 0: raise CacheSizeCannotBeLessThanZero("Cache capacity cannot be less than 0")
         # Head <-> Tail
 
     def __len__(self):
@@ -79,7 +86,7 @@ class LRUCache:
 
 class TestLRUCache(unittest.TestCase):
 
-    def test_initialization(self):
+    def test_valid_initialization(self):
         lru_cache = LRUCache(4)
         self.assertEqual(0, len(lru_cache))
         self.assertEqual(4, lru_cache.capacity)
@@ -96,6 +103,12 @@ class TestLRUCache(unittest.TestCase):
 
         self.assertIs(lru_cache.head.next, lru_cache.tail)
         self.assertIs(lru_cache.tail.previous, lru_cache.head)
+
+    def test_invalid_initialization(self):
+        with self.assertRaises(CacheSizeCannotBeLessThanZero) as ex:
+            LRUCache(-2)
+        expected_exception = ex.exception
+        self.assertEqual("Cache capacity cannot be less than 0", expected_exception.message)
 
     def test_get_non_existent_key(self):
         cache = LRUCache(2)
