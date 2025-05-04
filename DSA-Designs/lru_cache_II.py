@@ -1,3 +1,6 @@
+import unittest
+
+
 # Operations - get and put
 
 
@@ -30,6 +33,9 @@ class LRUCache:
         self.head.next = self.tail
         self.tail.previous = self.head
         # Head <-> Tail
+
+    def __len__(self):
+        return len(self.cache)
 
     def get(self, key):
         if key in self.cache:
@@ -69,3 +75,63 @@ class LRUCache:
         node.next = original_head_next
         self.head.next = node
         node.previous = self.head
+
+
+class TestLRUCache(unittest.TestCase):
+
+    def test_initialization(self):
+        lru_cache = LRUCache(4)
+        self.assertEqual(0, len(lru_cache))
+        self.assertEqual(4, lru_cache.capacity)
+        self.assertEqual({}, lru_cache.cache)
+        self.assertFalse(lru_cache.cache_is_full())
+
+        self.assertEqual(0, lru_cache.head.key)
+        self.assertEqual(0, lru_cache.head.value)
+        self.assertIsNone(lru_cache.head.previous)
+
+        self.assertEqual(0, lru_cache.tail.key)
+        self.assertEqual(0, lru_cache.tail.value)
+        self.assertIsNone(lru_cache.tail.next)
+
+        self.assertIs(lru_cache.head.next, lru_cache.tail)
+        self.assertIs(lru_cache.tail.previous, lru_cache.head)
+
+    def test_get_non_existent_key(self):
+        cache = LRUCache(2)
+        cache.put(1, "A")
+        cache.put(2, "B")
+        self.assertEqual(-1, cache.get(3))
+
+    def test_put_and_get_single_item(self):
+        cache = LRUCache(1)
+        cache.put(1, "A")
+        self.assertEqual("A", cache.get(1))
+
+    def test_put_over_capacity_eviction(self):
+        cache = LRUCache(2)
+        cache.put(1, "A")
+        cache.put(2, "B")
+        self.assertEqual("A", cache.get(1))
+
+        cache.put(3, "C")
+
+        self.assertEqual(-1, cache.get(2))  # key 2 should have been evicted
+        self.assertEqual("C", cache.get(3))  # key 2 should have been evicted
+        self.assertEqual(2, len(cache))  # key 2 should have been evicted
+
+    def test_recently_used_item_not_evicted(self):
+        lru_cache = LRUCache(2)
+        lru_cache.put(1, "A")
+        lru_cache.put(2, "B")
+
+        lru_cache.put(3, "C")  # key 1 should be evicted, not key 2
+        self.assertEqual("B", lru_cache.get(2))
+        self.assertEqual(-1, lru_cache.get(1))  # Only the least recently item was evicted
+
+    def test_update_existing_key(self):
+        cache = LRUCache(2)
+        cache.put(1, "A")
+        cache.put(2, "B")
+        cache.put(1, "A+")
+        self.assertEqual("A+", cache.get(1))
