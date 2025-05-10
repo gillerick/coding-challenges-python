@@ -3,22 +3,22 @@ import unittest
 
 def container_with_most_water(height: list[int]) -> int:
     maximum_area = 0
-    left_idx = 0
-    right_idx = len(height) - 1
-    while left_idx < right_idx:
-        length = right_idx - left_idx
-        left_height = height[left_idx]
-        right_height = height[right_idx]
-        current_area = length * min(right_height, left_height)
+    left_index = 0
+    right_index = len(height) - 1
+    while left_index < right_index:
+        left_height = height[left_index]
+        right_height = height[right_index]
+        length = right_index - left_index
+        current_area = min(left_height, right_height) * length
         maximum_area = max(current_area, maximum_area)
 
         if left_height > right_height:
-            right_idx -= 1
-        elif right_height > left_height:
-            left_idx += 1
+            right_index -= 1
+        elif right_index > left_index:
+            left_index += 1
         else:
-            left_idx += 1
-            right_idx -= 1
+            right_index -= 1
+            left_index += 1
 
     return maximum_area
 
